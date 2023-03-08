@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap JavaScript -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA Application Project</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a class="nav-link text-light" href="./index.html"> <h1 class="text-light">TA Application Project </h1>
+                        </a>
+                        <div class="ms-auto">
+                            <a class="navbar-brand text-light" href="./index.html">Tyler Harkness</a>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#application">Application</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#enrollments">Enrollments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#roles">Roles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#access">Authorization</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                </nav>
+
+    </header>
+
+
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <img src="./Images/application-home.png" alt="Screenshot of the application homepage">
+            <p>This is the overall home page that the administrator sees, this is all realtime data that is pulled from the database using LINQ queries.</p>
+        </section>
+        <section id="application">
+            <h2>Application</h2>
+            <img src="./Images/application-page.png" alt="Screenshot of the application page">
+        </section>
+        <section id="enrollments">
+            <h2>Enrollments</h2>
+            <img src="./Images/enrollment-1.png" alt="Screenshot of the enrollments page 1">
+            <p>We built an interactive chart using scraped data from a selenium webscraper. We used Highcharts javascript library to display and provide an interactive graph.</p>
+            <img src="./Images/enrollment-2.png" alt="Screenshot of the enrollments page 2">
+        </section>
+        <section id="roles">
+            <h2>Roles</h2>
+            <img src="./Images/roles.png" alt="Screenshot of the roles page">
+            <p>As you can see these are the avaliable roles that the administrator only has access to, the admin can assign various roles that have been created and the user will have those permissions.</p>
+        </section>
+        <section id="access">
+            <h2>Access Denied</h2>
+            <img src="./Images/access-denied.png" alt="Screenshot of authorization">
+            <p>The resulting page if the user is not authorized.</p>
+        </section>
+        <section id="Avaliability">
+            <h2>Student Avaliability</h2>
+            <img src="./Images/avaliability.png" alt="Screenshot of avaliability">
+            <p style="max-width: 50%">The user is able to interact with this pixi javascript graphic, When the user clicks on a timeslot it will turn green to indicate as avaliable. After the users saves the avaliability it is converted and sent to the database so the professors can see when the students are avaliable to work. </p>
+        </section>
+    </main>
+</body>
+</html>
