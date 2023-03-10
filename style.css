@@ -24,6 +24,13 @@ body {
     padding-top: 100px;
 }
 
+.descript{
+    font-size: 25px;
+    max-width:50%;
+    font-weight:bold;
+    margin-left: 50%;
+}
+
 main {
     padding: 20px;
 }
@@ -32,7 +39,9 @@ section {
     margin-bottom: 20px;
 }
 
-img {
-    max-width: 100%;
+.image {
+    max-width: 50%;
     height: auto;
+    float: left;
+    margin-right: 20px;
 }
