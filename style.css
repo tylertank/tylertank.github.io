@@ -1,6 +1,4 @@
-.container {
-    display: flex;
-}
+
 
 .navbar-brand {
     margin-right: auto;
@@ -26,9 +24,8 @@ body {
 
 .descript{
     font-size: 25px;
-    max-width:50%;
     font-weight:bold;
-    margin-left: 50%;
+ 
 }
 
 main {
@@ -44,4 +41,10 @@ section {
     height: auto;
     float: left;
     margin-right: 20px;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

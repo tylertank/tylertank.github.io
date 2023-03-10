@@ -51,46 +51,75 @@
 
 
     <main>
-        <section id="home">
-        <div>
-            <img src="./Images/application-home.png" style="float: left; margin-right: 10px;" alt="Screenshot of the application homepage">
-            <h2>Home</h2>
-            <p class="descript">This is the overall home page that the administrator sees, this is all realtime data that is pulled from the database using LINQ queries.</p>
-        </div>
+        <section id="home" class="row">
+            <div class="col-md-6">
+                <img src="./Images/application-home.png" class="img-fluid" alt="Screenshot of the application homepage">
+            </div>
+            <div class="col-md-6">
+                <h2>Home</h2>
+                <p class="descript">This is the overall home page that the administrator sees, this is all realtime data that is pulled from the database using LINQ queries.</p>
+            </div>
         </section>
-        <section id="application">
-            <div>
-            <h2>Application</h2>
-            <img src="./Images/application-page.png" style="float: left; margin-right: 10px;" alt="Screenshot of the application page">
-        </div>
-                </section>
-        <section id="enrollments">
-            <div>
-            <h2>Enrollments</h2>
-            <img src="./Images/enrollment-1.png" style="float: left; margin-right: 10px;" alt="Screenshot of the enrollments page 1">
-            <p class="descript">We built an interactive chart using scraped data from a selenium webscraper. We used Highcharts javascript library to display and provide an interactive graph.</pclass="descript">
-        </div>
-            <img src="./Images/enrollment-2.png" style="float: left; margin-right: 10px;" alt="Screenshot of the enrollments page 2">
-                </section>
-        <section id="roles">
-            <h2>Roles</h2>
-            <img src="./Images/roles.png" alt="Screenshot of the roles page">
-            <p class="descript">As you can see these are the avaliable roles that the administrator only has access to, the admin can assign various roles that have been created and the user will have those permissions.</p>
+        <section id="application" class="row">
+            <div class="col-md-6">
+                <img src="./Images/application-page.png" class="img-fluid" alt="Screenshot of the application page">
+            </div>
+            <div class="col-md-6">
+                <h2>Application</h2>
+                <p class="descript">This is the administrator's view of user u0000000's applcation, The admin can edit or delete it if neccessary or they can go back to the list to see an overall view of all the applications.</p>
+            </div>
         </section>
-        <section id="access">
-            <h2>Access Denied</h2>
-            <img src="./Images/access-denied.png" alt="Screenshot of authorization">
-            <p class="descript">The resulting page if the user is not authorized.</p>
+
+        <section id="enrollments" class="row">
+            <div class="col-md-6">
+                <img src="./Images/enrollment-1.png" class="img-fluid" alt="Screenshot of the enrollments page 1">
+                <img src="./Images/enrollment-2.png" class="img-fluid" alt="Screenshot of the enrollments page 2">
+            </div>
+            <div class="col-md-6">
+                <h2>Enrollments</h2>
+                <p class="descript">We built an interactive chart using scraped data from a selenium webscraper. We used Highcharts javascript library to display and provide an interactive graph.</p>
+            </div>
         </section>
-        <section id="Avaliability">
-            <h2>Student Avaliability</h2>
-            <img src="./Images/avaliability.png" alt="Screenshot of avaliability">
-            <p class="descript">The user is able to interact with this pixi javascript graphic, When the user clicks on a timeslot it will turn green to indicate as avaliable. After the users saves the avaliability it is converted and sent to the database so the professors can see when the students are avaliable to work. </p>
+
+        <section id="roles" class="row">
+            <div class="col-md-6">
+                <img src="./Images/roles.png" class="img-fluid" alt="Screenshot of the roles page">
+            </div>
+            <div class="col-md-6">
+                <h2>Roles</h2>
+                <p class="descript">As you can see these are the avaliable roles that the administrator only has access to, the admin can assign various roles that have been created and the user will have those permissions.</p>
+            </div>
         </section>
+
+        <section id="access" class="row">
+            <div class="col-md-6">
+                <img src="./Images/access-denied.png" class="img-fluid" alt="Screenshot of authorization">
+            </div>
+            <div class="col-md-6">
+                <h2>Access Denied</h2>
+                <p class="descript">The resulting page if the user is not authorized.</p>
+            </div>
+        </section>
+
+        <section id="Avaliability" class="row">
+            <div class="col-md-6">
+                <img src="./Images/avaliability.png" class="img-fluid" alt="Screenshot of avaliability">
+            </div>
+            <div class="col-md-6">
+                <h2>Student Avaliability</h2>
+                <p class="descript">The user is able to interact with this pixi javascript graphic, When the user clicks on a timeslot it will turn green to indicate as avaliable. After the users saves the avaliability it is converted and sent to the database so the professors can see when the students are avaliable to work. </p>
+            </div>
+        </section>
+
     </main>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <footer class="border-top footer text-muted bg-dark">
+        <div class="container text-light">
+            <p>Copyright &copy; 2023 Tyler Harkness.
+        </div>
+    </footer>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 </body>
 
 </html>
