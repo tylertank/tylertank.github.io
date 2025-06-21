@@ -1,95 +1,270 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tyler Harkness - Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tyler Harkness | Red Team Operator</title>
 
-   
+<!-- ======  STYLE  ====== -->
+<style>
+    /* ---------- CSS  inspired by  grahamhelton.com ---------- */
+    :root {
+        /* dark / light toggle friendly */
+        color-scheme: dark light;
 
+        /* fonts & palette  (override to taste) */
+        --font-mono: "JetBrains Mono", Menlo, monospace;
+        --bg-main: hsl(223 10% 9%);
+        --text-main: hsl(0 0% 92%);
+        --text-headings: hsl(0 0% 100%);
+        --text-muted: hsl(210 5% 60%);
+        --text-title: hsl(280 100% 71%);
+        --border-subtle: hsl(220 5% 24%);
+        --link-static: hsl(200 100% 71%);
+        --link-hover: hsl(200 100% 85%);
+        --accent-primary: hsl(199 100% 50%);
+        --accent-secondary: hsl(48 100% 50%);
+    }
+
+    /* basic reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: var(--font-mono, monospace);
+        background: var(--bg-main);
+        color: var(--text-main);
+        line-height: 1.6;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    /* ---------- Header ---------- */
+    .terminal-header { margin-bottom: 3rem; }
+    .terminal-header h1 {
+        font-size: 2.8rem;
+        letter-spacing: -1px;
+        color: var(--text-title);
+    }
+    .terminal-header p { color: var(--text-main); margin-top: .5rem; }
+
+    /* ---------- Sections ---------- */
+    .section { margin: 4rem 0 2rem; }
+    .section-header {
+        display: flex; align-items: center;
+        border-bottom: 1px solid var(--border-subtle);
+        padding-bottom: .5rem; margin-bottom: 1rem;
+    }
+    .section-number {
+        font-weight: bold; color: var(--text-muted);
+        min-width: 2.5rem; font-size: .8rem;
+    }
+    .section-title {
+        font-size: 1.4rem; letter-spacing: 1px;
+        text-transform: uppercase; color: var(--text-headings);
+    }
+
+    /* ---------- Experience Timeline ---------- */
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline::before {
+        content: ""; position: absolute; inset-block: 0;
+        left: 6px; width: 1px; background: var(--border-subtle);
+    }
+    .timeline-item { margin-bottom: 1.4rem; position: relative; }
+    .timeline-item::before {
+        content: ""; position: absolute; left: -20px; top: -20px;
+        width: 8px; height: 8px; background: var(--text-muted);
+    }
+    .timeline-item.current::before { background: var(--accent-primary); }
+    .timeline-item h3 { color: var(--text-headings); font-size: 1rem; }
+    .timeline-item p { color: var(--text-muted); font-size: .85rem; }
+
+    /* ---------- Cards (Projects) ---------- */
+    .cards-grid {
+        display: grid; gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .card {
+        border: 1px dashed var(--border-subtle);
+        padding: 1rem .9rem; transition: border .2s ease;
+    }
+    .card:hover { border-style: solid; border-color: var(--link-hover); }
+    .card h3 { margin-bottom: .4rem; color: var(--text-headings); font-size: 1.05rem; }
+    .card p { font-size: .88rem; }
+
+    /* ---------- Skills ---------- */
+    .skill-grid { display: grid; grid-template-columns: 1fr 5fr; gap: .6rem; margin-bottom: .6rem; }
+    .skill-name { font-size: .9rem; }
+    .skill-bar { height: 8px; background: var(--accent-primary); }
+
+    /* ---------- Certifications ---------- */
+    .cert-grid {
+        display: flex; flex-wrap: wrap; gap: 1rem;
+    }
+    .cert-badge {
+        border: 1px dashed var(--border-subtle);
+        padding: 1rem .6rem; min-width: 140px;
+        text-align: center; font-size: .82rem;
+        transition: border .2s, transform .2s;
+    }
+    .cert-badge:hover {
+        border-style: solid; border-color: var(--link-hover);
+        transform: translateY(-3px);
+    }
+    .cert-badge h4 { margin: .4rem 0 .2rem; color: var(--text-headings); font-size: .9rem; }
+
+    /* ---------- Links ---------- */
+    a { color: var(--link-static); border-bottom: 1px dotted var(--border-subtle); text-decoration: none; }
+    a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+
+    /* ---------- Footer ---------- */
+    footer {
+        margin-top: 4rem; border-top: 1px dashed var(--border-subtle);
+        padding-top: 1rem; font-size: .8rem; color: var(--text-muted);
+        display: flex; justify-content: space-between; flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+        body { padding: 1.5rem .8rem; }
+        .terminal-header h1 { font-size: 2.2rem; }
+    }
+</style>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="nav-link text-light" href="./index.html">
-                    <h1 class="text-light">Tyler Harkness</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ml-auto">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="./TAproject.html">TA Application</a>
-                        </li>
-                    </ul>
-                    <a class="navbar-brand text-light" href="./index.html">Tyler Harkness</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<!-- ==========  HEADER  ========== -->
+<header class="terminal-header">
+    <h1>Tyler Harkness</h1>
+    <p>I focus on breaking (and therefore strengthening) systems.<br>
+       This site collects highlights of my work and learning so others can build on it.</p>
+</header>
 
+<!-- ==========  EXPERIENCE  ========== -->
+<section class="section" id="experience">
+    <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">Job Experience</h2>
+    </div>
 
-    <main>
-        <h2>About Me</h2>
-        <div class="container" style="float:left">
-            <div class="row">
-                <div class="col-md-6">
-                    <img class="img-fluid w-100" src="./Images/Tyler-Harkness.jpg" alt="Tyler Harkness">
-                </div>
-                <div class="col-md-6">
-                    <h2>check out my new portfolio website! </h2> 
-                    <a href="https://tylertank.com" target="_blank">here</a>
-                    <p style=" font-size: 25px; font-weight: bold; ">
-                        
-                        Hi, I'm a senior computer science student with a passion for cyber security and software development. Over the past three years, I've gained extensive experience in managing cyber security for Utah Cancer Specialists, where I was able to apply my technical skills to help the organization recover from a ransomware attack. During my time in charge of cyber security, we have had 0 breaches at Utah Cancer, which I am particularly proud of.
-                        <br />
-                        <br />
-                        As part of my senior capstone project, I'm currently working on a software vulnerability scanner that will enable small businesses to patch CVE's and protect themselves against potential security breaches. Aside from my work in cyber security, I also have experience working in the finance and healthcare fields. My expertise in software development and cyber security principles have allowed me to develop a unique skill set that combines technical knowledge with a deep understanding of cyber security principles.
-                        <br />
-                        <br />
-                        I'm excited to explore different roles and industries, whether it's in cyber security or software development, and contribute my skills and dedication to help make a difference.
-                    </p>
-                </div>
-            </div>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Penetration Tester — <em>Dark Wolf Solutions</em> <span style="float:right">Aug 2024 – Present</span></h3>
+            <p>Clearfield, UT • Long-term engagements, custom tooling, malware development &amp; reporting.</p>
         </div>
 
-        <div class="container" style="float:left">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul>
-                        <li>
-                            <h2>My Work</h2>
-                            <a class="nav-link text-light" style="max-width: 25%;" href="./TAproject.html">
-                                <img src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/utahutes.com/images/responsive_2021/newUU.png" alt="Project 1">
-                                <h3 class="nav-link text-dark">TA Application</h3>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <p style=" font-size: 25px; font-weight: bold; ">The TA Application project was a full stack semester long project that myself and one other student worked on. Together we built from the ground up a bootstrap website on the ASP.NET core 6.0 architecture. Utilizing Microsofts authorization and authentication services. You can learn more about the project here.</p>
-                </div>
-            </div>
+        <div class="timeline-item">
+            <h3>Cyber Defense Analyst — <em>US Air Force</em> <span style="float:right">Dec 2023 – Aug 2024</span></h3>
+            <p>Hill AFB, UT • Threat hunting, LogRhythm, AI rule tuning, incident response.</p>
         </div>
 
-    </main>
-    <footer class="border-top footer text-muted bg-dark">
-        <div class="container text-light">
-            <p>Copyright &copy; 2023 Tyler Harkness.
+        <div class="timeline-item">
+            <h3>Information Security Specialist — <em>Utah Cancer Specialists</em> <span style="float:right">Dec 2018 – Dec 2023</span></h3>
+            <p>Salt Lake City, UT • Policy design, MITRE ATT&amp;CK, Splunk/CrowdStrike, audit &amp; testing.</p>
         </div>
-    </footer>
- 
-    <!-- Bootstrap JavaScript -->
-    <script type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    </div>
+</section>
+
+<!-- ==========  PROJECTS  ========== -->
+<section class="section" id="projects">
+    <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Side Projects &amp; Tooling</h2>
+    </div>
+
+    <div class="cards-grid">
+        <article class="card">
+            <h3>Custom C2 Development</h3>
+            <p>Designed a bespoke implant + team-server that evades modern EDRs (CrowdStrike, Elastic,
+               SentinelOne) and keeps log traces minimal.</p>
+        </article>
+
+        <article class="card">
+            <h3>Software Vulnerability Scanner</h3>
+            <p>Led a 4-person team to build a full-stack vuln-scanner (C#, ASP.NET Core, JS) with C++ daemon,
+               API and DB pipeline.</p>
+        </article>
+    </div>
+</section>
+
+<!-- ==========  SKILLS  ========== -->
+<section class="section" id="skills">
+    <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Skills</h2>
+    </div>
+
+    <h3 style="margin-bottom: .8rem;">Programs</h3>
+    <div class="skill-grid">
+        <span class="skill-name">Cobalt Strike</span><span class="skill-bar" style="width:90%"></span>
+        <span class="skill-name">CrowdStrike</span><span class="skill-bar" style="width:85%"></span>
+        <span class="skill-name">Elastic Stack</span><span class="skill-bar" style="width:80%"></span>
+    </div>
+
+    <h3 style="margin:1.6rem 0 .8rem;">Languages</h3>
+    <div class="skill-grid">
+        <span class="skill-name">C#</span><span class="skill-bar" style="width:90%"></span>
+        <span class="skill-name">Python</span><span class="skill-bar" style="width:85%"></span>
+        <span class="skill-name">C/C++</span><span class="skill-bar" style="width:80%"></span>
+        <span class="skill-name">Java/Kotlin</span><span class="skill-bar" style="width:75%"></span>
+        <span class="skill-name">JavaScript</span><span class="skill-bar" style="width:70%"></span>
+    </div>
+
+    <h3 style="margin:1.6rem 0 .8rem;">Databases</h3>
+    <div class="skill-grid">
+        <span class="skill-name">MS SQL</span><span class="skill-bar" style="width:80%"></span>
+        <span class="skill-name">MySQL</span><span class="skill-bar" style="width:75%"></span>
+    </div>
+
+    <h3 style="margin:1.6rem 0 .8rem;">Soft Skills</h3>
+    <p>Client Relations • Teamwork • Problem-Solving • Adaptability • Communication</p>
+</section>
+
+<!-- ==========  CERTIFICATIONS  ========== -->
+<section class="section" id="certs">
+    <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Certifications</h2>
+    </div>
+
+    <div class="cert-grid">
+        <div class="cert-badge"><h4>CRTO</h4>Certified Red Team Operator</div>
+        <div class="cert-badge"><h4>CPTS</h4>Certified Pen Test Specialist</div>
+        <div class="cert-badge"><h4>CYSA+</h4>CompTIA Cybersecurity Analyst</div>
+        <div class="cert-badge"><h4>Security+</h4>CompTIA</div>
+        <div class="cert-badge"><h4>CEH</h4>Certified Ethical Hacker</div>
+    </div>
+</section>
+
+<!-- ==========  EDUCATION  ========== -->
+<section class="section" id="education">
+    <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Education</h2>
+    </div>
+
+    <p><strong>B.S. Software Development</strong> — University of Utah, <em>Dec 2023</em></p>
+    <p>Salt Lake City, UT</p>
+</section>
+
+<!-- ==========  CONTACT  ========== -->
+<section class="section" id="contact">
+    <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Contact</h2>
+    </div>
+
+    <p>Email: <a href="mailto:tyler@hotmail.com">tyler@hotmail.com</a> &nbsp;•&nbsp;
+       LinkedIn: <a href="https://www.linkedin.com/in/tyler-harkness" target="_blank">/in/tyler-harkness</a> &nbsp;•&nbsp;
+       GitHub: <a href="https://github.com/tylertank" target="_blank">@tylertank</a>
+    </p>
+</section>
+
+<!-- ==========  FOOTER  ========== -->
+<footer>
+    <span>© 2025 Tyler Harkness</span>
+    <span>Built with vanilla HTML + CSS</span>
+</footer>
+
 </body>
-
 </html>
