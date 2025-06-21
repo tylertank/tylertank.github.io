@@ -72,7 +72,7 @@
     }
     .timeline-item { margin-bottom: 1.4rem; position: relative; }
     .timeline-item::before {
-        content: ""; position: absolute; left: -21px; top: 20px;
+        content: ""; position: absolute; left: -21px; top: 10px;
         width: 8px; height: 8px; background: var(--text-muted);
     }
     .timeline-item.current::before { background: var(--accent-primary); }
@@ -149,18 +149,17 @@
 
     <div class="timeline">
         <div class="timeline-item">
-            <h3>Red Team Operator — <em>Dark Wolf Solutions</em> <span style="float:right">Aug 2024 – Present</span></h3>
-            <p>Clearfield, UT • Long-term covert engagements, custom tooling, client comms &amp; reporting.</p>
+            <h3>Red Team Operator — <em>Dark Wolf Solutions</em> <span style="float:right">Aug 2024 – Present</span></h3>      
         </div>
 
         <div class="timeline-item">
             <h3>Cyber Defense Analyst — <em>US Air Force</em> <span style="float:right">Dec 2023 – Aug 2024</span></h3>
-            <p>Hill AFB, UT • Threat hunting, LogRhythm, AI rule tuning, incident response.</p>
+          
         </div>
 
         <div class="timeline-item">
             <h3>Information Security Specialist — <em>Utah Cancer Specialists</em> <span style="float:right">Dec 2018 – Dec 2023</span></h3>
-            <p>Salt Lake City, UT • Policy design, MITRE ATT&amp;CK, Splunk/CrowdStrike, audit &amp; testing.</p>
+           
         </div>
     </div>
 </section>
@@ -175,15 +174,16 @@
     <div class="cards-grid">
         <article class="card">
             <h3>Custom C2 Development</h3>
-            <p>Designed a bespoke implant + team-server that evades modern EDRs (CrowdStrike, Elastic,
-               SentinelOne) and keeps log traces minimal.</p>
+            <p>Created a bespoke implant and integrated it into Mythic that evades modern EDRs (CrowdStrike, Elastic,
+               SentinelOne) and keeps log traces minimal. Currently used by the Dark Wolf Red Team</p>
         </article>
-
-        <article class="card">
-            <h3>Software Vulnerability Scanner</h3>
-            <p>Led a 4-person team to build a full-stack vuln-scanner (C#, ASP.NET Core, JS) with C++ daemon,
-               API and DB pipeline.</p>
-        </article>
+      
+            <article class="card">
+                <h3 ><a href="https://github.com/tylertank/networkCveScanner">Software Vulnerability Scanner</a></h3>
+                <p >Led a 4-person team to build a full-stack vuln-scanner (C#, ASP.NET Core, JS) with C++ daemon,
+                    API and DB pipeline.</p>
+                </article>
+     
     </div>
 </section>
 
